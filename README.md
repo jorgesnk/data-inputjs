@@ -1,7 +1,7 @@
 # data-inputjs
 simple text input per terminal
 
-    ```javascript
+    ```js
 
     const readData = async function () {
     let name = await text("add A name")
