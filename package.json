@@ -1,0 +1,12 @@
+{
+  "name": "data-inputjs",
+  "version": "1.0.0",
+  "description": "simple text input per terminal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jorge Nakassima",
+  "license": "MIT"
+
+}
