@@ -1,6 +1,4 @@
-
-
-
+"use strict";
 
 // add a data to input
 const text = (title) => {
