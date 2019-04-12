@@ -18,7 +18,7 @@ const text = (title) => {
 // return a data selected in the terminal
 const select = (dataToSelect = []) => {
 
-    if(!dataToSelect){
+    if (!dataToSelect) {
         return Promise.reject("string erro")
     }
 
@@ -106,6 +106,10 @@ const select = (dataToSelect = []) => {
 
     }
 
+    process.on("exit", () => {
+        process.stdout.write('\u001b[?25h')
+    })
+
 
     return new Promise((resolve, reject) => {
 
@@ -121,6 +125,8 @@ const select = (dataToSelect = []) => {
         })
 
     })
+
+
 
 }
 

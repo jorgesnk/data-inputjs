@@ -25,6 +25,3 @@ const addName = async () => {
 // jorge
 
 }
-
-
-addName();
