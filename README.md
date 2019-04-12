@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bolacha/data-inputjs.svg?branch=master)](https://travis-ci.org/bolacha/data-inputjs)
+[![Build Status](https://travis-ci.org/jorgesnk/data-inputjs.svg?branch=master)](https://travis-ci.org/jorgesnk/data-inputjs)
 
 # data-inputjs
 simple text input per terminal
