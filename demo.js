@@ -26,3 +26,5 @@ const addName = async () => {
 
 }
 
+colorSelector()
+
