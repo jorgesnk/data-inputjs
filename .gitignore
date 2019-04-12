@@ -1,2 +1,5 @@
 node_modules/
 package-lck.json
+coverage/
+yarn.lock
+package-lock.json
