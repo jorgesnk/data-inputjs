@@ -8,11 +8,13 @@
     "url": "https://github.com/jorgesnk/data-inputjs.git"
   },
   "scripts": {
-    "test": "jest --coverage --verbose"
+    "test": "jest --coverage --verbose",
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "author": "jorge Nakassima",
   "license": "MIT",
   "devDependencies": {
+    "coveralls": "^3.0.3",
     "jest": "^24.7.1",
     "mock-stdin": "^0.3.1"
   }
