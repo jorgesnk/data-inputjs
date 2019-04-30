@@ -1,8 +1,7 @@
 const input = require("./index")
 
 const colorSelector = async () => {
-    console.log("select a color")
-    const select = await input.select(["red", 'blue', 'orange', 'pink'])
+    const select = await input.select(["red", 'blue', 'orange', 'pink'], "select a color")
     console.log(`your color is ${select}`)
 
     // select a color
@@ -16,7 +15,6 @@ const colorSelector = async () => {
 
 }
 
-
 const addName = async () => {
     const name = await input.text("add your name: ")
     console.log(name)
@@ -26,5 +24,11 @@ const addName = async () => {
 
 }
 
-colorSelector()
+const addNumber = async () => {
+    const number = await input.numeric("add a number")
+    console.log(number)
+// add a number
+// 10
+}
+
 
