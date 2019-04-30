@@ -9,8 +9,7 @@ simple text input per terminal
 **Select exemple**
 ```js
 const colorSelector = async () => {
-    console.log("select a color")
-    const select = await input.select(["red", 'blue', 'orange', 'pink'])
+    const select = await input.select(["red", 'blue', 'orange', 'pink'],'select a color')
     console.log(`your color is ${select}`)
 
 
@@ -33,6 +32,19 @@ const addName = async () => {
 
     // add your name: jorge
     // jorge
+
+}
+```
+
+
+**Input exemple numeric**
+```js
+const addNumber = async () => {
+    const number = await input.numeric("add a number: ")
+    console.log(number)
+
+    // add a number: 10
+    // 10
 
 }
 ```
