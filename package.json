@@ -1,6 +1,6 @@
 {
   "name": "data-inputjs",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "simple text input per terminal",
   "main": "index.js",
   "repository": {
@@ -17,5 +17,11 @@
     "coveralls": "^3.0.3",
     "jest": "^24.7.1",
     "mock-stdin": "^0.3.1"
-  }
+  },
+  "keywords": [
+    "input",
+    "terminal",
+    "console",
+    "command-line"
+  ]
 }
