@@ -1,6 +1,6 @@
 {
   "name": "data-inputjs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "simple text input per terminal",
   "main": "index.js",
   "repository": {
