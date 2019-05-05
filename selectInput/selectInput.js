@@ -21,11 +21,13 @@ const selectInput = (dataToSelect = [], lablel = '') => {
 
     list = createList(dataToSelect)
 
+    
+    // process.on("exit", () => {
+    //     process.stdout.write('\u001b[?25h')
 
-    process.on("exit", () => {
-        process.stdout.write('\u001b[?25h')
-    })
+    // })
 
+    
 
     return new Promise((resolve, reject) => {
         print(readline);
@@ -33,7 +35,7 @@ const selectInput = (dataToSelect = [], lablel = '') => {
             switch (data.name) {
                 case 'up': pressUp(readline); ;break;
                 case 'down': pressDown(readline);break;
-                case 'return': pressEnter(resolve, readline); break;
+                case 'return': pressEnter(resolve, readline); process.stdout.write('\u001b[?25h'); break;
                 default: process.stdout.clearLine(); break;
             }
         })
