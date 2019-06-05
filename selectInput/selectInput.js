@@ -21,21 +21,21 @@ const selectInput = (dataToSelect = [], lablel = '') => {
 
     list = createList(dataToSelect)
 
-    
-    // process.on("exit", () => {
-    //     process.stdout.write('\u001b[?25h')
 
-    // })
+    process.on("exit", () => {
+        process.stdout.write('\u001b[?25h')
 
-    
+    })
+
+
 
     return new Promise((resolve, reject) => {
         print(readline);
         process.stdin.on("keypress", (s, data) => {
             switch (data.name) {
-                case 'up': pressUp(readline); ;break;
-                case 'down': pressDown(readline);break;
-                case 'return': pressEnter(resolve, readline); process.stdout.write('\u001b[?25h'); break;
+                case 'up': pressUp(readline); process.stdout.clearLine(); break;
+                case 'down': pressDown(readline); process.stdout.clearLine(); break;
+                case 'return': pressEnter(resolve, readline); process.removeAllListeners("exit"); process.stdout.write('\u001b[?25h'); process.stdout.clearLine(); break;
                 default: process.stdout.clearLine(); break;
             }
         })
