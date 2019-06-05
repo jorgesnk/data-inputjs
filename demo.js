@@ -23,7 +23,7 @@ const colorSelector = async () => {
 }
 
 const addName = async () => {
-    const name = await input.text("add your name: ")
+    const name = await input.text("add your : ")
     console.log(name)
 
     // add your name: jorge
