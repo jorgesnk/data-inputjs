@@ -51,7 +51,7 @@ const addNumber = async () => {
 
 **Input exemple password**
 ```js
-const addNumber = async () => {
+const addPassword = async () => {
     const password = await input.password("add a password: ")
     console.log(password)
 
