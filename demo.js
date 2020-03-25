@@ -46,5 +46,5 @@ const addPassword = async () => {
 }
 
 
-addNumber()
 
+addNumber()

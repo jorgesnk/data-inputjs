@@ -22,6 +22,7 @@ const numberInput = (title, errorMessage = "Invalid number") => {
             resolve(parseFloat(numberInputData));
             return;
         }
+
         console.log(errorMessage)
         const resovePromisse = await numberInput(title, errorMessage);
         if (resovePromisse) {
@@ -33,7 +34,7 @@ const numberInput = (title, errorMessage = "Invalid number") => {
 }
 
 const numberInputValidatorIsValid = (number) => {
-    if (isNaN(number)) {
+    if (number.includes(' ') || isNaN(number)) {
         return false
     }
     return true
