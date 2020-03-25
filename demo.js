@@ -38,6 +38,13 @@ const addNumber = async () => {
     // 10
 }
 
+const addPassword = async () => {
+    const password = await input.password("add a password")
+    console.log(password)
+    // add a password
+    // pass
+}
 
 
+addNumber()
 

@@ -24,9 +24,9 @@ describe("Test the password Input", () => {
         }
         setTimeout(() => sendKeystrokes().then(), 5)
 
-        let selection = await passwordInput("Add your password: ");
+        let password = await passwordInput("Add your password: ");
 
-        expect(selection).toBe("teste");
+        expect(password).toBe("teste");
 
         done();
     });
