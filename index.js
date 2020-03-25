@@ -2,6 +2,7 @@
 
 const { numberInput, textInput } = require("./textInput/textInput")
 const { selectInput } = require("./selectInput/selectInput")
+const { passwordInput } = require("./passwordInput/passwordInput")
 
 // add a data to input a string
 
@@ -48,6 +49,20 @@ const select = (dataSelect = [], title = "") => {
     return selectInput(dataSelect, title)
 }
 
+// return a data to password
+/**
+ * add a data to input a password
+ * 
+ * @example 
+ *   password("title")
+ * 
+ * @param   {String} title   require param
+ * @returns {Promise<String>}
+ */
+const password = (title) => {
+    return passwordInput(title)
+}
+
 
 
 
@@ -56,6 +71,7 @@ module.exports = {
     select,
     text,
     numeric,
+    password
 }
 
 

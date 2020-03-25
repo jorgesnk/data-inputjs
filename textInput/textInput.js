@@ -15,13 +15,14 @@ const textInput = (title, ) => {
 
 const numberInput = (title, errorMessage = "Invalid number") => {
 
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve, _reject) => {
         const numberInputData = await textInput(title)
 
         if (numberInputValidatorIsValid(numberInputData)) {
             resolve(parseFloat(numberInputData));
             return;
         }
+
         console.log(errorMessage)
         const resovePromisse = await numberInput(title, errorMessage);
         if (resovePromisse) {
@@ -33,10 +34,10 @@ const numberInput = (title, errorMessage = "Invalid number") => {
 }
 
 const numberInputValidatorIsValid = (number) => {
-    if (!isNaN(number)) {
-        return true
+    if (number.includes(' ') || number == '' || isNaN(number)) {
+        return false
     }
-    return false
+    return true
 }
 
 module.exports = {

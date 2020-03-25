@@ -49,6 +49,18 @@ const addNumber = async () => {
 }
 ```
 
+**Input exemple password**
+```js
+const addNumber = async () => {
+    const password = await input.password("add a password: ")
+    console.log(password)
+
+    // add a password: test
+    // test
+
+}
+```
+
 
 
 

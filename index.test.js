@@ -1,5 +1,5 @@
 const { stdin } = require('mock-stdin');
-const { select, text,numeric } = require('./index');
+const { select, text, numeric, password } = require('./index');
 
 // Key codes
 const keys = {
@@ -19,8 +19,8 @@ test('Testing the SELECT', async (done) => {
         io.send(keys.enter)
     }
     setTimeout(() => sendKeystrokes().then(), 5)
-    
-    let selection = await select([ "Recheio", "Bolacha" ]);
+
+    let selection = await select(["Recheio", "Bolacha"]);
 
     expect(selection).toBe("Bolacha");
     done();
@@ -32,7 +32,7 @@ test('Testing the TEXT', async (done) => {
         io.send(keys.enter);
     }
     setTimeout(() => sendKeystrokes().then(), 5)
-    
+
     let selection = await text("Add you name : ");
 
     expect(selection).toBe("Einserberg");
@@ -46,10 +46,24 @@ test('Testing the Numeric', async (done) => {
         io.send(keys.enter);
     }
     setTimeout(() => sendKeystrokes().then(), 5)
-    
+
     let selection = await numeric("Add a number : ");
 
     expect(selection).toBe(12);
+
+    done();
+});
+
+test('Testing the Password', async (done) => {
+    const sendKeystrokes = async () => {
+        io.send("test");
+        io.send(keys.enter);
+    }
+    setTimeout(() => sendKeystrokes().then(), 5)
+
+    let passwordValue = await password("Add a password : ");
+
+    expect(passwordValue).toBe('test');
 
     done();
 });
