@@ -1,42 +1,38 @@
+const readline = require('readline');
 
-const rl = require("readline");
-let pass = ""
-const readline = rl.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    terminal: true
-})
+const passwordInput = (title) => new Promise((resolve, _reject) => {
 
+    // https://stackoverflow.com/a/48561893
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    const stdin = process.openStdin();
 
-
-process.on("exit", () => {
-    process.stdout.write('\u001b[?25h')
-
-})
-
-process.stdin.on("keypress", (dataString, event) => {
-    console.clear()
-    process.stdout.clearLine()
-    readline.write('\u001b[?25l');
-
-    if (event.name === "backspace") {
-        pass = pass.substr(0, pass.length - 1)
-        console.log(pass);
-
-    }
-    else if (event.name == "return") {
-        readline.close();
-    }
-
-   
-
-    else {
-        if (dataString) {
-            pass += dataString
+    process.stdin.on('data', char => {
+        char = char + '';
+        switch (char) {
+            case '\n':
+            case '\r':
+            case '\u0004':
+                stdin.pause();
+                break;
+            default:
+                process.stdout.clearLine();
+                readline.cursorTo(process.stdout, 0);
+                process.stdout.write(title + Array(rl.line.length + 1).join('*'));
+                break;
         }
-        console.log(pass);
+    });
 
-    }
+    rl.question(title, value => {
+        rl.history = rl.history.slice(1);
+        resolve(value);
+    });
+});
 
 
-})
+
+module.exports = {
+    passwordInput
+}

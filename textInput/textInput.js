@@ -15,7 +15,7 @@ const textInput = (title, ) => {
 
 const numberInput = (title, errorMessage = "Invalid number") => {
 
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve, _reject) => {
         const numberInputData = await textInput(title)
 
         if (numberInputValidatorIsValid(numberInputData)) {
@@ -33,10 +33,10 @@ const numberInput = (title, errorMessage = "Invalid number") => {
 }
 
 const numberInputValidatorIsValid = (number) => {
-    if (!isNaN(number)) {
-        return true
+    if (isNaN(number)) {
+        return false
     }
-    return false
+    return true
 }
 
 module.exports = {
