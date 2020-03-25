@@ -34,7 +34,7 @@ const numberInput = (title, errorMessage = "Invalid number") => {
 }
 
 const numberInputValidatorIsValid = (number) => {
-    if (number.includes(' ') || isNaN(number)) {
+    if (number.includes(' ') || number == '' || isNaN(number)) {
         return false
     }
     return true
