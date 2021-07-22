@@ -41,9 +41,14 @@ const addNumber = async () => {
 const addPassword = async () => {
     const password = await input.password("add a password")
     console.log(password)
+    await colorSelector()
     // add a password
     // pass
 }
 
+// colorSelector()
+
+// colorSelector()
+addPassword()
 
 
