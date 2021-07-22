@@ -27,7 +27,7 @@ describe("Test the password Input", () => {
         let password = await passwordInput("Add your password: ");
 
         expect(password).toBe("teste");
-
+        
         done();
     });
 
