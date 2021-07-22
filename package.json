@@ -14,6 +14,7 @@
   "author": "jorge Nakassima",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^26.0.24",
     "coveralls": "^3.0.3",
     "jest": "^24.7.1",
     "mock-stdin": "^0.3.1"
@@ -25,6 +26,5 @@
     "command-line"
   ],
   "dependencies": {
-    "@types/jest": "^26.0.24"
   }
 }
